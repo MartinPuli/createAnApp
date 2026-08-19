@@ -59,6 +59,22 @@ The source launch failed twice before approval:
 
 Other encountered failure modes included submitting a new subscription group without one of its products and screenshot uploads remaining stuck in processing. The complete sanitized case study and recovery rules are in [`docs/case-study-lumenfoil.md`](docs/case-study-lumenfoil.md). A second launch — four rejections including a dead StoreKit paywall, a Release build that shipped empty, the consumer-terms liability architecture, and niche distribution economics — is in [`docs/case-study-wattprep.md`](docs/case-study-wattprep.md).
 
+## Run it
+
+Claude Code agents get their entry point from [`CLAUDE.md`](CLAUDE.md) and the
+XcodeBuildMCP server from [`.mcp.json`](.mcp.json). The pipeline's mechanical
+stages are scripts, not prose:
+
+```bash
+scripts/archive-and-upload.sh --project ios/MyApp.xcodeproj --scheme MyApp --team TEAMID --out /tmp/rel
+scripts/verify-ipa.sh --ipa /tmp/rel/export/MyApp.ipa --version 1.0.1 --build 4 --require "some shipped disclosure"
+scripts/archive-and-upload.sh ... --upload
+scripts/asc-release.py --bundle-id com.example.app --version 1.0.1 --build 4 --notes whats-new.txt   # add --submit only when the human says ship
+```
+
+Export and upload are deliberately separate steps with the IPA verification
+between them, and `--submit` never runs implicitly.
+
 ## Validate the suite
 
 ```bash
