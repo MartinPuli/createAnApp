@@ -49,7 +49,7 @@ python3 scripts/asc-stage-version.py \
   --build 1
 ```
 
-For an update, optionally add `--notes /absolute/path/whats-new.txt`. Set `ASC_KEY_ID`, `ASC_ISSUER_ID`, and `ASC_KEY_PATH` in the process environment. The script waits for the exact marketing-version/build-number pair to become valid, creates or reuses the version, attaches the build, and optionally updates existing localization release notes. It does not submit the version, attest compliance, add first-time IAP dependency items, or release it.
+For an update, optionally add `--notes /absolute/path/whats-new.txt`. Set `ASC_KEY_ID`, `ASC_ISSUER_ID`, and `ASC_KEY_PATH` in the process environment. The key is created by the account holder under Users and Access → Integrations → App Store Connect API; the API authenticates with a short-lived ES256 JWT minted from the downloaded `.p8`, so no session cookie or password ever passes through the agent. The script waits for the exact marketing-version/build-number pair to become valid, creates or reuses the version, attaches the build, and optionally updates existing localization release notes. It does not submit the version, attest compliance, add first-time IAP dependency items, or release it.
 
 ## 5. Complete the dossier and submit
 

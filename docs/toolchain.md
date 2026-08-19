@@ -46,6 +46,34 @@ Do not copy the example device name blindly. Discover installed runtimes and sel
 
 An agent-controlled simulator interaction is exploratory evidence, not a durable release test. Convert stable critical flows into XCTest/XCUITest and preserve `.xcresult` outputs. Verify archive settings and entitlements independently from the debug simulator build.
 
+## Deterministic project generation
+
+Generate the Xcode project from a declarative spec (e.g. XcodeGen's
+`project.yml`) instead of hand-editing the pbxproj. Regenerate after **every**
+spec change — version bumps included — or the build silently uses the stale
+project. Put Info.plist values in the spec (`INFOPLIST_KEY_*`), including a
+truthful `ITSAppUsesNonExemptEncryption`, so export compliance stops blocking
+every submission with a manual question.
+
+## Test-failure diagnostics
+
+- **`TEST FAILED` with no failing assertion** means a test started and never
+  finished. Diff the `Test Case '-… started` lines against the
+  `passed/failed` lines to find which ones hung; the usual cause is a call
+  that needs foreground UI (a payment sheet) running headless. Gate those
+  tests behind an environment variable so they skip with a reason.
+- **Simulator destinations by name drift across Xcode releases.** A device
+  name that existed last month may not exist today. List available simulators
+  and target by UDID, not by name.
+- **A second model container in a test host can trap** when the app under test
+  already created one (SwiftData/Core Data). Test the data layer at the
+  serialization level (decode the bundled seed, assert its invariants) rather
+  than booting a second container.
+- **Debug-only launch arguments must survive state refreshes.** A flag like
+  `-screenshotMode` that flips an entitlement is overwritten the next time the
+  real entitlement refreshes; OR the flag back in at every refresh point, and
+  compile all of it out of Release.
+
 ## Concurrency rule
 
 Avoid multiple build agents writing to the same DerivedData, simulator, app container, or archive path. Allocate unique DerivedData/test-product paths and simulator devices, or serialize build/test work.
