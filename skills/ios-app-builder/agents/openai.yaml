@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS App Builder"
+  short_description: "Implement a production-grade Swift and SwiftUI application"
+  default_prompt: "Use $ios-app-builder to implement this iOS or iPadOS application against its acceptance criteria."

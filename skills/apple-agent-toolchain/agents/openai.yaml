@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple Agent Toolchain"
+  short_description: "Configure safe tooling for autonomous Apple development"
+  default_prompt: "Use $apple-agent-toolchain to configure and verify the safest available Apple development tools."

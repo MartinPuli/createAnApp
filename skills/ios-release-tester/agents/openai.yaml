@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Release Tester"
+  short_description: "Verify builds, StoreKit, persistence, UI, and archives"
+  default_prompt: "Use $ios-release-tester to produce release evidence for this Apple app."

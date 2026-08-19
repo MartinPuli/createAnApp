@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Store Launch Orchestrator"
+  short_description: "Coordinate the full idea-to-App-Store release pipeline"
+  default_prompt: "Use $app-store-launch-orchestrator to assess this app and drive it through the next evidence gate."
