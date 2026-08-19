@@ -2,7 +2,8 @@
 
 | Requested capability | Primary skill | Supporting evidence |
 |---|---|---|
-| Search/select app idea | `$app-idea-validator` | Scorecard, falsifiers, behavioral validation |
+| Search/select app idea | `$app-market-discovery` | Broad opportunity map, adversarial ranking, validation handoff |
+| Validate an existing idea | `$app-idea-validator` | Frozen hypothesis, falsifiers, behavioral gates, explicit verdict |
 | Validate market fit | `$app-idea-validator`, `$app-launch-operator` | Interest → activation → payment → retention distinction |
 | Product design | `$apple-product-spec`, `$apple-app-designer` | Traceability, state/device/accessibility matrices |
 | Development | `$ios-app-builder` | SwiftUI vertical slices, persistence, StoreKit, manifests |

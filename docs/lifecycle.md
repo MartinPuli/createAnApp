@@ -6,8 +6,10 @@ Maintain one version-controlled dossier with these fields:
 
 | Field | Required evidence |
 |---|---|
+| Discovery mandate | Optional constraints and ranked opportunities when no idea exists |
 | Product thesis | Target user, job, pain, current alternative, native advantage |
 | Market thesis | Dated sources, competitor set, pricing, search/demand signals, falsifiers |
+| Validation verdict | Behavioral gate, result, remaining unknowns, and exact next decision |
 | Distribution thesis | Reachable channels, expected economics, attribution mechanism |
 | Product contract | Scope, non-goals, acceptance criteria, supported devices and OS versions |
 | Monetization | Entitlements, products, prices, trial/offer truth, restoration and failure behavior |
@@ -36,11 +38,12 @@ Never roll a `PASSED` gate forward automatically. Re-open affected gates when th
 
 1. Inspect the repository, product state, accounts, prior submissions, and current external state.
 2. Build the dossier before prescribing actions.
-3. Identify the earliest failed or unassessed prerequisite.
-4. Invoke the narrow stage skill for that prerequisite.
-5. Save artifacts and evidence paths.
-6. Run the completion audit for the stage.
-7. Advance only when the evidence matches the gate's full scope.
+3. If no idea exists, run discovery. If an idea already exists, skip discovery and begin validation.
+4. Identify the earliest failed or unassessed prerequisite.
+5. Invoke the narrow stage skill for that prerequisite.
+6. Save artifacts and evidence paths.
+7. Run the completion audit for the stage.
+8. Advance only when the evidence matches the gate's full scope.
 
 ## Definition of shipped
 

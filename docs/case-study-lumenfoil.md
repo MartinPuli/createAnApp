@@ -4,7 +4,7 @@ This case study records process lessons, not private account data. Identifiers, 
 
 ## Product path
 
-The work did not begin with the final product. Multiple opportunities were researched and displaced when competition, platform risk, distribution, or operating burden invalidated the thesis. The final candidate was an iPad-first stained-glass pattern studio with a narrow job: turn a pattern into a workbench-ready plan using numbered pieces, cutability checks, material estimates, and exports.
+The work did not begin with the final product. Market discovery produced multiple opportunities, and separate validation work displaced candidates when competition, platform risk, distribution, or operating burden invalidated their assumptions. The final candidate was an iPad-first stained-glass pattern studio with a narrow job: turn a pattern into a workbench-ready plan using numbered pieces, cutability checks, material estimates, and exports.
 
 The important decision was not “use AI.” It was to select a job where iPad, Apple Pencil, local persistence, visual editing, and printable output were part of the work itself. AI assistance was used to research and build; the released product did not falsely claim an AI feature.
 

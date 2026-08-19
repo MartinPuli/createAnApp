@@ -19,7 +19,8 @@ Create and maintain a launch dossier, identify the earliest unproven prerequisit
 
 | Need | Invoke |
 |---|---|
-| Research or challenge the idea | `$app-idea-validator` |
+| No idea exists; discover markets and candidates | `$app-market-discovery` |
+| A specific idea exists; validate or falsify it | `$app-idea-validator` |
 | Convert evidence into scope | `$apple-product-spec` |
 | Design or audit UI across Apple devices | `$apple-app-designer` |
 | Configure Xcode/MCP/API tooling | `$apple-agent-toolchain` |
@@ -31,6 +32,8 @@ Create and maintain a launch dossier, identify the earliest unproven prerequisit
 | Launch and measure distribution | `$app-launch-operator` |
 
 If a named skill is unavailable, implement its evidence contract directly rather than skipping the stage.
+
+Do not force discovery when the user already has an idea. Preserve that idea as the validation subject and route directly to `$app-idea-validator`. If validation falsifies it, report that result; invoke discovery only when the user asks for replacement ideas.
 
 ## Maintain the launch dossier
 

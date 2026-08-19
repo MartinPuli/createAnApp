@@ -9,7 +9,8 @@ The system is evidence-gated: an agent must prove each stage before claiming the
 | Stage | Skill | Outcome |
 |---|---|---|
 | Coordinate | [`$app-store-launch-orchestrator`](skills/app-store-launch-orchestrator/SKILL.md) | Current-state dossier, next gate, and handoffs |
-| Discover | [`$app-idea-validator`](skills/app-idea-validator/SKILL.md) | Ranked, falsifiable opportunity thesis |
+| Discover (optional) | [`$app-market-discovery`](skills/app-market-discovery/SKILL.md) | Ranked market and product opportunities |
+| Validate | [`$app-idea-validator`](skills/app-idea-validator/SKILL.md) | Evidence and behavioral verdict for one existing idea |
 | Specify | [`$apple-product-spec`](skills/apple-product-spec/SKILL.md) | Buildable product, data, monetization, and acceptance spec |
 | Design | [`$apple-app-designer`](skills/apple-app-designer/SKILL.md) | Adaptive iPhone/iPad flows and visual QA matrix |
 | Tool | [`$apple-agent-toolchain`](skills/apple-agent-toolchain/SKILL.md) | Safe XcodeBuildMCP/CLI and Apple automation setup |
@@ -20,19 +21,30 @@ The system is evidence-gated: an agent must prove each stage before claiming the
 | Recover | [`$app-review-recovery`](skills/app-review-recovery/SKILL.md) | Rejection diagnosis, remediation, and resubmission |
 | Launch | [`$app-launch-operator`](skills/app-launch-operator/SKILL.md) | Measured, policy-safe distribution loop |
 
-Start with `$app-store-launch-orchestrator` when the app's state is unclear. Invoke a stage skill directly when the current gate is known.
+Start with `$app-store-launch-orchestrator` when the app's state is unclear. Use `$app-market-discovery` only when no idea has been selected. If the user already has an idea, begin directly with `$app-idea-validator`; do not make them repeat market discovery.
+
+## Independent entry routes
+
+- **No idea yet:** `$app-market-discovery` → `$app-idea-validator` → specification → design/build → release/compliance → submission → launch.
+- **Idea already chosen:** `$app-idea-validator` → specification → design/build → release/compliance → submission → launch.
+- **App already being built:** begin at the earliest unproven design, build, test, compliance, or submission gate.
+- **App rejected:** begin with `$app-review-recovery`, then re-run every gate invalidated by the fix.
+- **App already live:** begin with `$app-launch-operator` and keep compliance/security triggers active.
+
+Market discovery is optional. Validation, release evidence, compliance, and launch controls are not optional merely because code already exists.
 
 ## Evidence gates
 
-1. **Opportunity:** current demand, competition, distribution, native advantage, economics, risk, and falsifiers are documented.
-2. **Specification:** every marketed promise maps to an acceptance test and every data flow maps to a disclosure.
-3. **Design:** all supported device families, orientations, Dynamic Type, accessibility, empty/error/loading states, and paywalls are usable.
-4. **Implementation:** core jobs are real; no prototype button or mock export is presented as functional.
-5. **Release:** clean build, automated tests, StoreKit, persistence, restore, archive validation, and TestFlight evidence exist.
-6. **Compliance:** binary, website, metadata, privacy labels, terms, AI claims, SDKs, and content rights agree.
-7. **Submission:** agreements, bundle, build, metadata, screenshots, review access, subscriptions/IAP, and release controls are complete.
-8. **Launch:** attribution links, support, rollback, budget caps, and decision thresholds exist.
-9. **Learning:** retention, paid conversion, refunds, support, and proceeds—not downloads alone—drive iteration.
+1. **Discovery (optional):** a broad market search ranks distinct opportunities without calling them validated.
+2. **Validation:** one chosen idea has documented demand, competition, distribution, native advantage, economics, risk, falsifiers, and behavioral gates.
+3. **Specification:** every marketed promise maps to an acceptance test and every data flow maps to a disclosure.
+4. **Design:** all supported device families, orientations, Dynamic Type, accessibility, empty/error/loading states, and paywalls are usable.
+5. **Implementation:** core jobs are real; no prototype button or mock export is presented as functional.
+6. **Release:** clean build, automated tests, StoreKit, persistence, restore, archive validation, and TestFlight evidence exist.
+7. **Compliance:** binary, website, metadata, privacy labels, terms, AI claims, SDKs, and content rights agree.
+8. **Submission:** agreements, bundle, build, metadata, screenshots, review access, subscriptions/IAP, and release controls are complete.
+9. **Launch:** attribution links, support, rollback, budget caps, and decision thresholds exist.
+10. **Learning:** retention, paid conversion, refunds, support, and proceeds—not downloads alone—drive iteration.
 
 ## What the agent cannot impersonate
 
