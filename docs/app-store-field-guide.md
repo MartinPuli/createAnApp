@@ -84,6 +84,46 @@ Apple accepts one to ten screenshots per supported display in JPEG/JPG/PNG. If u
 6. Add the remaining batch only after processing succeeds.
 7. Re-open the version and confirm no hidden device/localization well is still processing.
 
+## Release options
+
+- **Automatic release** for compliance or fix updates: they should reach users
+  the moment review passes, not when someone remembers a button.
+- **Phased release** (7-day gradual rollout to auto-update users) for feature
+  releases where crash detection matters; not for compliance updates.
+- **Never reset the summary rating** on an update unless the product changed
+  identity entirely; the rating does not come back.
+- **Promotional text** is editable at any time without a new review — use it
+  for time-sensitive copy instead of burning a submission.
+- Updates inherit screenshots, description, and privacy answers from the live
+  version; only touch what changed.
+
+## Promo codes and first reviews
+
+Each app version grants a fixed allotment of promo codes (currently 100) —
+full-price unlock inventory that costs nothing. Spend them deliberately on
+real prospective users and ask for honest reviews. A store page with zero
+ratings converts paid traffic at close to nothing, so codes-then-reviews comes
+before any ad spend.
+
+## Verify public state from outside
+
+Do not trust the dashboard alone; the public APIs prove what users actually
+see:
+
+```bash
+# Is the app live, at what version, since when?
+curl -s "https://itunes.apple.com/lookup?bundleId=BUNDLE_ID&country=us"
+
+# Competitor scan: names, prices, rating counts for a search term
+curl -s "https://itunes.apple.com/search?term=TERM&entity=software&country=us&limit=10"
+```
+
+`resultCount: 0` on lookup means not live in that storefront. For the legal
+pages the listing links to, verify with redirects followed (`curl -sL`) and
+assert on content, not just status — a 200 from a misconfigured host can be an
+empty page. The URLs inside the shipped binary must match the live site
+exactly; grep the source for the links the app opens and fetch each one.
+
 ## Submission preflight
 
 - Every required field is saved, not merely entered.

@@ -62,7 +62,7 @@ The suite includes reusable controls for recurring review failures, including:
 - screenshot uploads that remain stuck in processing;
 - dependent subscription or IAP items returned after an associated app-version rejection.
 
-The generalized causes, recovery steps, and permanent controls are in [`docs/app-review-lessons.md`](docs/app-review-lessons.md).
+The generalized causes, recovery steps, and permanent controls are in [`docs/app-review-lessons.md`](docs/app-review-lessons.md). Two companion playbooks cover the ground review lessons do not: [`docs/consumer-terms-liability.md`](docs/consumer-terms-liability.md) for the terms that actually reduce legal exposure, and [`docs/niche-distribution.md`](docs/niche-distribution.md) for launch economics in small markets.
 
 ## What is covered
 
