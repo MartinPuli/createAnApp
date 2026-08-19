@@ -12,6 +12,7 @@ fi
 
 expected=(
   app-store-launch-orchestrator
+  app-market-discovery
   app-idea-validator
   apple-product-spec
   apple-app-designer

@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Market Discovery"
+  short_description: "Find and rank promising Apple app markets and ideas"
+  default_prompt: "Use $app-market-discovery to find and rank Apple app opportunities that fit my constraints."

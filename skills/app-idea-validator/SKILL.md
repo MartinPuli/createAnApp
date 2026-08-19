@@ -1,88 +1,89 @@
 ---
 name: app-idea-validator
-description: Research, compare, falsify, and validate an Apple app opportunity before development. Use when choosing among app ideas, reconsidering a niche, estimating demand or willingness to pay, analyzing competitors and App Store search results, finding an Apple-native advantage, designing validation without interviews, or deciding whether to build, pivot, or stop.
+description: Validate or falsify a specific Apple app idea that the user has already chosen. Use when an existing idea, niche, target user, or product thesis must be tested for demand, competition, willingness to pay, distribution, retention, native advantage, economics, or platform risk before development. Preserve the supplied idea as the subject of analysis; do not restart broad idea discovery unless explicitly requested.
 ---
 
 # App Idea Validator
 
-Produce a dated opportunity thesis that distinguishes evidence, inference, assumptions, and unknowns. A score ranks hypotheses; it never proves market fit.
+Test one supplied product hypothesis against current evidence and behavior. Separate interest, activation, payment, retention, and product-market fit. A score or favorable report is not validation.
 
-## Define the decision
+## Freeze the hypothesis being tested
 
-Record constraints before searching:
+Record without silently changing it:
 
-- target platform/device and territory;
-- consumer, prosumer, or business buyer;
-- time, budget, team, and operator constraints;
-- acquisition model and whether interviews are allowed;
-- payment model and platform-policy constraints;
-- unacceptable safety, regulatory, moderation, or service burden.
+- target user and buyer;
+- painful job and use context;
+- promised outcome;
+- proposed Apple device/platform advantage;
+- current alternative;
+- monetization and price hypothesis;
+- initial territory and acquisition channel;
+- user constraints and non-negotiables.
 
-Avoid optimizing for “easy to build.” Optimize for painful job, reachable buyer, recurring value, native advantage, viable economics, and defensible distribution.
+If a component is missing, state the minimum assumption needed to test it. If evidence later contradicts the idea, return a failed or conditional verdict rather than substituting another idea. Use `$app-market-discovery` only if the user asks for alternatives.
 
-## Build a broad candidate set
+## Run desk validation
 
-1. Generate candidates across unrelated categories, not variants of the first idea.
-2. Exclude obvious platform clones, generic AI wrappers, repackaged websites, and two-sided markets without a liquidity plan.
-3. Prefer jobs where Apple hardware materially improves the workflow: camera, microphone, location, offline work, Pencil, sensors, notifications, Shortcuts/App Intents, HealthKit, or on-device processing.
-4. Record why each candidate could fail before scoring it.
+Use dated, direct evidence:
 
-## Research each finalist
+- App Store competitors/substitutes, pricing, subscriptions, ratings, review complaints, screenshots, update cadence, and territory;
+- competitor websites, help centers, changelogs, and public pricing;
+- search intent, forums, communities, procurement behavior, and recurring complaint language;
+- credible category data and current Apple platform changes;
+- reachable distribution channels and their likely economics;
+- safety, privacy, moderation, regulatory, and App Review risks.
 
-Use current primary and direct evidence:
+Create a source ledger distinguishing observation from inference. Search adversarially for free incumbents, platform bundling, recent entrants, low frequency, weak switching, high CAC, refund/churn risk, human-service burden, and claims liability.
 
-- App Store results, ratings, review recency, screenshots, pricing, subscriptions, update cadence;
-- competitor websites, changelogs, help centers, public pricing, and reviews;
-- search trends, forums, communities, job postings, procurement pages, and complaint language;
-- credible market or industry sources;
-- Apple platform changes that create or erase advantage;
-- distribution channels where the buyer is actually reachable.
+## Test the business assumptions
 
-Save query, territory, date, source URL, observation, and inference. Do not infer revenue from ratings alone.
+Evaluate:
 
-## Score and challenge
+- urgency and measurable value;
+- evidence of willingness to pay at the proposed price;
+- why users would switch now;
+- recurrence and retention mechanism;
+- addressable and reachable beachhead, not only total market size;
+- channel-to-price economics;
+- whether Apple hardware materially improves the job;
+- feasibility of delivering every promised outcome;
+- risks that make the model non-operable.
 
-Score 0–10 using explicit weights:
+Use scoring only to expose assumptions and compare the idea against its own thresholds, not to declare product-market fit.
 
-| Criterion | Suggested weight |
-|---|---:|
-| Pain, urgency, or measurable ROI | 20% |
-| Willingness to pay evidence | 15% |
-| Reachable distribution | 15% |
-| Recurrence and retention | 10% |
-| Competitive opening | 10% |
-| Apple-native advantage | 10% |
-| Build/operate feasibility | 10% |
-| Platform/regulatory risk | 5% |
-| Expansion or moat | 5% |
+## Design behavioral validation
 
-Run an adversarial pass: find incumbents, recent entrants, free bundles, platform features, substitutes, high CAC, weak frequency, moderation, claims risk, and reasons the buyer will not switch. Re-score after this pass.
+Choose the smallest honest experiments that can reject the hypothesis:
 
-## Validate behavior without mandatory interviews
-
-When interviews are disallowed, use honest behavioral experiments:
-
-- message-specific landing pages with a real waitlist or beta CTA;
+- message-specific landing page with a real waitlist or beta CTA;
 - App Store keyword/product-page research;
-- small-budget ads with campaign attribution;
-- public TestFlight or limited beta;
-- functional prototype tasks and completion evidence;
-- real subscription or purchase behavior only after the product can deliver.
+- small-budget campaign with attribution;
+- task-complete functional prototype;
+- limited TestFlight cohort;
+- real free-to-paid behavior after value can be delivered;
+- retention and renewal observation appropriate to the job frequency.
 
-Never use fake checkout, fake scarcity, fabricated testimonials, bought reviews, or undisclosed synthetic customers. State early-access status clearly.
+When interviews are disallowed, replace opinions with behavior. Never use fake checkout, fake scarcity, fabricated testimonials, bought reviews, or undisclosed synthetic customers. State beta/early-access status accurately.
 
-## Define gates
+## Precommit gates
 
-Before building, write:
+For every experiment define metric, sample/traffic requirement, proceed threshold, stop/pivot threshold, budget cap, deadline, instrumentation, and interpretation limits. Distinguish:
 
-- three strongest disconfirming facts;
-- minimum signal to proceed;
-- kill threshold and deadline;
-- maximum validation spend;
-- what would prove only interest versus activation, payment, retention, and market fit.
+- click or waitlist interest;
+- completed core-job activation;
+- paid conversion;
+- repeated use and renewal;
+- viable acquisition/contribution economics.
 
-## Deliverables
+## Verdict
 
-Produce a candidate matrix, source ledger, competitor map, chosen beachhead, positioning, pricing hypothesis, distribution thesis, falsifiers, validation experiments, gate thresholds, and a `BUILD / VALIDATE MORE / PIVOT / STOP` decision.
+Return one of:
 
-Read `references/scorecard.md` for a reusable output template.
+- `VALIDATED FOR MVP`: current evidence and precommitted validation gate passed; market fit remains unproven.
+- `VALIDATE MORE`: evidence is promising but the required behavioral gate is incomplete.
+- `PIVOT WITHIN IDEA`: keep the same user/job but change a named assumption.
+- `FALSIFIED`: a central assumption failed its threshold.
+
+Produce the source ledger, competitor/substitute map, risk register, experiment results, economics, falsifiers, unknowns, and exact next gate. Invoke `$apple-product-spec` only after `VALIDATED FOR MVP` or an explicit user decision to accept the remaining risk.
+
+Read `references/validation-plan.md` for the output template.
