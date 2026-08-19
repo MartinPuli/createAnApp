@@ -57,7 +57,7 @@ The source launch failed twice before approval:
 - Auto-renewable subscriptions were submitted without a functional Terms of Use link in metadata.
 - A later review found the interface crowded and unusable on supported iPad/iPhone review devices.
 
-Other encountered failure modes included submitting a new subscription group without one of its products and screenshot uploads remaining stuck in processing. The complete sanitized case study and recovery rules are in [`docs/case-study-lumenfoil.md`](docs/case-study-lumenfoil.md).
+Other encountered failure modes included submitting a new subscription group without one of its products and screenshot uploads remaining stuck in processing. The complete sanitized case study and recovery rules are in [`docs/case-study-lumenfoil.md`](docs/case-study-lumenfoil.md). A second launch — four rejections including a dead StoreKit paywall, a Release build that shipped empty, the consumer-terms liability architecture, and niche distribution economics — is in [`docs/case-study-wattprep.md`](docs/case-study-wattprep.md).
 
 ## Validate the suite
 
