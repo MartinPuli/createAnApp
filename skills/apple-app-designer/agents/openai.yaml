@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple App Designer"
+  short_description: "Design adaptive, accessible iPhone and iPad experiences"
+  default_prompt: "Use $apple-app-designer to design and audit this app across every supported Apple device family."
