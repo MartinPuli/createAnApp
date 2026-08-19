@@ -62,6 +62,26 @@ The suite includes reusable controls for recurring review failures, including:
 
 The generalized causes, recovery steps, and permanent controls are in [`docs/app-review-lessons.md`](docs/app-review-lessons.md).
 
+## Run it
+
+Claude Code agents get their entry point from [`CLAUDE.md`](CLAUDE.md) and the
+XcodeBuildMCP server from [`.mcp.json`](.mcp.json). The pipeline's mechanical
+stages are scripts, not prose:
+
+```bash
+scripts/archive-and-upload.sh --project ios/MyApp.xcodeproj --scheme MyApp --team TEAMID --out /tmp/rel
+scripts/verify-ipa.sh --ipa /tmp/rel/export/MyApp.ipa --version 1.0.1 --build 4 --require "some shipped disclosure"
+scripts/archive-and-upload.sh ... --upload
+scripts/asc-release.py --bundle-id com.example.app --version 1.0.1 --build 4 --notes whats-new.txt   # add --submit only when the human says ship
+```
+
+Export and upload are deliberately separate with the IPA ship gate between
+them, and `--submit` never runs implicitly. Two companion playbooks round out
+the lifecycle: [`docs/consumer-terms-liability.md`](docs/consumer-terms-liability.md)
+for the terms that actually reduce exposure, and
+[`docs/niche-distribution.md`](docs/niche-distribution.md) for launch economics
+in small markets.
+
 ## Validate the suite
 
 ```bash
