@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Idea Validator"
+  short_description: "Research and validate an Apple app opportunity"
+  default_prompt: "Use $app-idea-validator to research, score, and falsify this Apple app idea."

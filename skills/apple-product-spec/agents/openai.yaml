@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple Product Spec"
+  short_description: "Turn evidence into a buildable Apple product specification"
+  default_prompt: "Use $apple-product-spec to turn the validated opportunity into an implementation-ready product spec."

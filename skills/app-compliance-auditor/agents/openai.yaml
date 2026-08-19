@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Compliance Auditor"
+  short_description: "Audit privacy, security, AI, claims, and content rights"
+  default_prompt: "Use $app-compliance-auditor to audit this app and its marketing before release."

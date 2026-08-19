@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Store Connect Preparer"
+  short_description: "Prepare metadata, subscriptions, privacy, and submission"
+  default_prompt: "Use $app-store-connect-preparer to complete the App Store Connect submission dossier."
