@@ -21,10 +21,21 @@ it before allocating budget. Two consequences follow in small markets:
   carries zero search terms while competitors spend the name field on them.
   `Brand: Category Term` is a metadata edit — free, no build required. Spend
   the subtitle on the promise, not on keywords the name already covers.
-- **Zero ratings is a conversion blocker ahead of any traffic problem.** The
-  store grants a fixed allotment of promo codes per app version — free
-  full-unlock inventory to seed honest reviews through instructors, cohorts,
-  and practitioners. Ask for honest reviews, never for good ones.
+- **Zero ratings is a conversion blocker ahead of any traffic problem.** Seed
+  honest reviews by giving real prospective users free access — through
+  instructors, cohorts, and practitioners. Ask for honest reviews, never for
+  good ones.
+- **Know which free-access mechanism your product actually needs.** App promo
+  codes (a fixed allotment per version) only waive the *download* price, so
+  they do nothing for a free app whose value sits behind an in-app purchase.
+  Apple retired in-app-purchase promo codes on 26 March 2026 and replaced them
+  with **offer codes**, which now cover consumables, non-consumables, and
+  non-renewing subscriptions as well as auto-renewable ones. Offer codes live
+  with the product (Monetization → In-App Purchases → the product), not on the
+  promo-codes page, and are defined as a discount against a price point — a
+  free offer is easiest to configure in the web console. Redemption is
+  unchanged for the recipient ("Redeem Gift Card or Code"), so outreach copy
+  does not change.
 - **Rating prompts are a scarce resource.** The OS shows the system rating
   prompt roughly three times a year no matter how often it is requested. Gate
   it: only after the user succeeds at a meaningful milestone, only on a repeat
